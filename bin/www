@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('liveballs:server');
 var http = require('http');
 
+
 /**
  * Get port from environment and store in Express.
  */
@@ -32,6 +33,14 @@ server.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
+/* socketio*/
+
+const socketApi = require('../src/socketAPI');
+const io = socketApi.io;
+
+//express generator kullanınca io ları attach etmek gerekiyor
+
+io.attach(server);
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
