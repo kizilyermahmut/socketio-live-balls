@@ -1,0 +1,6 @@
+githuba ilk defa push yaparken 
+git commit -m "dosya adı" yaz 
+tekrar göndermek için git status ile üzerinde güncellenecek olan 
+dosyaları görebilirsin
+son olarak tekrar git push origin main dedikten sonra dosyalar 
+github yoluna gidecektir
