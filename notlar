@@ -1,0 +1,12 @@
+Dosya kurulumu
+dosyayı baştan oluştururken express generator nodemon
+gibi öğeleri kur
+daha sonra argument fn must be a function uyarısı verecek
+onu 
+
+function wrapfunction (fn, message) {
+if (fn == undefined) return;
+if (typeof fn !== 'function') {
+throw new TypeError('argument fn must be a function')
+}
+bu terimle düzelt
