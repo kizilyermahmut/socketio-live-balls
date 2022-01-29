@@ -1,0 +1,4 @@
+DİSCONNECT İŞLEMİ 
+Socket.api tarafında (server tarafı) burada yapılan işlemde broadcast emitted
+işlemiyle (disUser kodunu) client tarafı olan indexcontroller da
+socket.on ile yakalanacak

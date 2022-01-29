@@ -54,24 +54,29 @@ body{
   padding: 3px 5px;
   left: 0;
   width: 100%;
-  display: inline-block;
+  display: none;
 }
 
 .chat{
   margin-right: 10px!important;
   margin-left: 10px!important;
   height: 90px;
-  -webkit-image: -webkit-gradient(linear, left 60%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
-
+  overflow-y: auto
 }
 .chat .content{
   text-align: left;
+  display: flex !important;
 }
 .chat .name{
   font-size: 15px!important;
+  margin: 0 5px 0 2px !important;
 }
 .chat .message{
   display: inline;
+}
+.chat .description {
+  margin: 0 !important;
+  line-height: initial !important;
 }
 .chat .item{
   margin:.3em 0!important;

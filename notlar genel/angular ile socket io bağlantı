@@ -1,0 +1,27 @@
+serviceden kurdugumuz (src'den) socketio dosyasında 
+socketapi verisini bin altında www dosyasında io bağlantısı yaptıktan sonra ()
+//const socketApi = require('../src/socketAPI');
+const io = socketApi.io;
+
+//express generator kullanınca io ları attach etmek gerekiyor
+www kısmına aşagıdaki kod yazılacak
+
+io.attach(server);
+//
+işlemiyle tekrar src altındaki dosyadan io.on connection
+bağlantısını yaparak public altındaki javascript dosyasına ulaşıp
+oradan indexfactory de promise döngüsü oluşturup daha sonra 
+indexcontroller ekranında app.controller da 2. parametrede bilgileri
+indexfactory yapıp ön tarafta promise return işleminde connectsocket 
+verisini url bağlantıyla call back fonksiyonunda
+then ve catch dönderip terminale connection işlemi sonrası istenilen
+çıktıyı alabiliriz
+
+indexfactory.connectSocket('http://localhost:3000', üst satırda const 
+varsa buraya)
+.then ((socket) =>{
+    console.log('bağlantı gerçekleşti', socket);
+}).catch((err)=>{
+    consol.log(err);
+
+})

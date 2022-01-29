@@ -1,0 +1,9 @@
+ng if ile message.type sonrası;
+.code content te işe yarıyor 
+!message.type.message ile eşleştirme yapıp ayrıldı veya katıldı 
+işlemini client tarafında  socket.on la çıkış yada giriş 
+yaparken sonuc alabiliriz yani socket on ile ayrıldı yada giriş yaptı işlemini 
+angularda html ye ng-if=!message.type.message ile eşleştirme yapılır
+
+ayrıca daha sonrasında ekrana yazdırmak için de $scope.messages.push
+ve $scope.apply() metodunu kullanmamız gerekiyor 

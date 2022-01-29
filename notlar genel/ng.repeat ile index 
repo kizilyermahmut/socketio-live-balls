@@ -1,0 +1,18 @@
+NG REPEAT İLE CONTROLLER İNDEX.HTLM ARASINDA DÖNGÜ SAĞLAMA
+controllerda verilen bilgilere istinaden html de bunu yakalamak d
+için ng repeat ile 
+    <div class="item" ng-repeat="message in messages">
+        <div class="content">
+            <a class="header name">mehmet</a>
+            <div class="description messsage">{{message.text}}</div>
+        </div>
+    </div>
+
+yukarıdaki döngü sağlanır
+
+CONTROLLERA YAZILACAK kod
+$scope.messages =[{
+    text: "selam"
+},{
+    text: "merhaba"
+}]

@@ -1,0 +1,11 @@
+ODAYA GİRDİĞİNDE DİĞER KULLANICILARA BİLGİ VERME İŞLEMİ
+
+scope initten yakalanan newUser un 
+src altında socketapi dosyası içinde 
+io.on('connection') kodu altında 
+socket.broadcast.emit('newUser', (bu parametreye eğer varsa diğer tanımlamalar))
+ile indexcontroller altında then altındda socket.on ile yakalanan 
+işlem 
+ socket.on('newUser', (data) => {
+                console.log(data);
+emit edilen işlem sayesinde ekrana yazdırılır
