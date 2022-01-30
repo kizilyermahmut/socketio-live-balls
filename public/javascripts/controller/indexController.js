@@ -1,4 +1,4 @@
-app.controller('indexController', ['$scope', 'indexFactory', ($scope, indexFactory) => {
+app.controller('indexController', ['$scope', 'indexFactory', 'configFactory', ($scope, indexFactory, configFactory) => {
     /*  
     burada mantık sistemi scope üzerinden yakalamaak
     $scope.messages =[{
@@ -33,13 +33,14 @@ app.controller('indexController', ['$scope', 'indexFactory', ($scope, indexFacto
         }, 2000);
     }
     
-    function initSocket(username){
+    async function initSocket(username){
         const connectionOptions ={
             reconnectionAttempts: 3,
             reconnectionDelay: 600
         };
-        
-        indexFactory.connectSocket('http://localhost:3000', connectionOptions)
+        var configAPI = await configFactory.getConfig();
+        var url = configAPI.data.socketUrl;
+        indexFactory.connectSocket(url, connectionOptions)
         
         .then((socket) =>{
             socket.emit('newUser', {username})

@@ -9,21 +9,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css" />
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/angular/angular.min.js"></script>
-    <script src="/javascripts/main.js"></script>
-    <script src="/javascripts/services/indexFactory.js"></script>
-    <script src="/javascripts/controller/indexController.js"></script>
 </head>
 <body ng-app="app", ng-cloak=>
-
+    
     <div ng-controller="indexController", ng-init="init()"> 
         <div class="ui one column stackable center aligned page grid margin-30">
             <div class="column twelve wide">
                 <div class="ui stacked segment gameArea", ng-click="onClickPlayer($event)">
                     <div class="circle {{player.color}}" , ng-repeat="player in players", ng-style="{'left': player.position.x + 'px', 'top': player.position.y + 'px'}", id="{{player.id}}">
-
+                        
                         <div class="relative">
                             <span class="name">{{player.username}}</span>
                             <div class="message"></div>
@@ -38,23 +32,30 @@
                             <div class="description messsage", ng-if="!message.type.message">ayrıldı</div>
                             <div class="description messsage", ng-if="message.type.message">katıldı</div>
                         </div>
-
+                        
                         <div class="content", ng-if="message.type.code">
                             
                             <a class="header name">{{message.username}}</a>
                             <div class="description messsage">{{message.text}}</div>
-                           
+                            
                         </div>
                     </div>
                 </div>       
-                        
+                
                 <form class="ui action input fluid", ng-submit="newMessage()">
                     <input ng-model='message', placeholder="Type here...">
                     <button class="ui button", type="submit">Send</button>
                 </form>   
-                    
+                
                 
             </div>
         </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/jquery/dist/jquery.min.js"></script>
+        <script src="/angular/angular.min.js"></script>
+        <script src="/javascripts/main.js"></script>
+        <script src="/javascripts/services/indexFactory.js"></script>
+        <script src="/javascripts/services/configFactory.js"></script>
+        <script src="/javascripts/controller/indexController.js"></script>
     </body>
     </html>
